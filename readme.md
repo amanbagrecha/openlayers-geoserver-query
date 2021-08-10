@@ -2,12 +2,12 @@
 
 ## 🔀 How to run the application
 
-Run the application at `https://52.90.64.40`
+Run the application at `https://52.90.64.40:8000`
 
 The application requires login credentials to be able to load and query layer served via geoserver.
 ```
 username: aman
-password: 123
+password: openlayers_example
 ```
 
 
