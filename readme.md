@@ -1,0 +1,27 @@
+# Openlayers Query Layer served via Geoserver
+
+## 🔀 How to run the application
+
+Run the application at `https://52.90.64.40`
+
+The application requires login credentials to be able to load and query layer served via geoserver.
+```
+username: aman
+password: 123
+```
+
+
+The left-toggleable-pane allows to turn off and on the layer from `sf` workspace in geoserver. 
+
+The `search query` button on the navigation page allows to search specfic layer by its attribute value
+
+Know more about the application [here](https://amanbagrecha.github.io/post/geoserver/geoserver-query-builder/).
+
+
+## 🏁 Technology stack
+- Django
+- Openlayers
+- Geoserver
+- Postgis
+
+> Powered by AWS
