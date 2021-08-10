@@ -1,0 +1,119 @@
+
+  /* map style */
+
+  .map {
+    /* height: 90vh; */
+    width: 100%;
+    height: 100%;
+  }
+  .ol-popup {
+	  position: absolute;
+	  background-color: white;
+	  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+	  padding: 15px;
+	  border-radius: 10px;
+	  border: 1px solid #cccccc;
+	  bottom: 12px;
+	  left: -50px;
+	  min-width: 280px;
+	}
+	.ol-popup:after, .ol-popup:before {
+	  top: 100%;
+	  border: solid transparent;
+	  content: " ";
+	  height: 0;
+	  width: 0;
+	  position: absolute;
+	  pointer-events: none;
+	}
+	.ol-popup:after {
+	  border-top-color: white;
+	  border-width: 10px;
+	  left: 48px;
+	  margin-left: -10px;
+	}
+	.ol-popup:before {
+	  border-top-color: #cccccc;
+	  border-width: 11px;
+	  left: 48px;
+	  margin-left: -11px;
+	}
+	.ol-popup-closer {
+	  text-decoration: none;
+	  position: absolute;
+	  top: 2px;
+	  right: 8px;
+	}
+	.ol-popup-closer:after {
+	  content: "✖";
+	}
+	.ol-popup-content{
+		overflow: auto;
+		white-space: nowrap;
+
+	}
+	/* Style the Image Used to Trigger the Modal */
+	#workspaceid {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.ol-attribution{
+	font-size: 12px;
+}
+
+#workspaceid:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+#myModal .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+#myModal .modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img */
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+	#myModal .modal-content {
+    width: 100%;
+  }
+}
+
+
+.table{
+	display: block;
+    width: 100%;
+	max-width: 300px;
+	max-height: 400px;
+	overflow-y: scroll;
+    margin-bottom: 0;
+    background-color: transparent;
+    white-space: nowrap;
+	font-size: 100%;
+}
+table tbody {
+    display: table;
+    width: 100%;
+}
+th {
+    background-color: #5f788a;
+    color: #fafafa;
+}
+

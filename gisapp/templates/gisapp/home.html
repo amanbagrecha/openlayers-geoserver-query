@@ -1,0 +1,139 @@
+{% extends 'gisapp/base.html' %} {% load static %} 
+
+{% block content %}
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
+	type="text/css"
+/>
+<link rel="stylesheet" type="text/css" href="{% static 'gisapp/css/main.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'gisapp/css/map.css' %}">
+
+
+    <!-- Modal for search bar-->
+	
+
+	<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="searchModalLabel">Query Layer</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+				<label for="layername"> Select Layer</label>
+			  <select name="layername" id="layernames" onchange="loadprops(this.value)">
+			  <option value="-" disabled selected="selected"> Select Layer</option>
+			  </select>
+			    <br>
+			   <label for="Columnname"> Select Column</label>
+			  <select name="Columnname" id="Columnnames" onchange="loadcols(this)">
+			  <option value="-" disabled> Select columns</option>
+			  </select>
+			  <br>
+			   
+			  			   <label for="queryvalue"> Enter Query Value</label>
+<input type="text" name="val" id="queryvalue">
+			</div>
+			<div class="modal-footer">
+						  <button type="button" onclick="clearbtn_search()" class="btn btn-danger" data-dismiss="modal">Clear Search</button>
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closebtn_search()">Close</button>
+			  <button type="button" onclick="getValues()" class="btn btn-success" id="savebtn_search">Search</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+										
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js" 
+integrity="sha512-MMmVaQGDVI3Wouc5zT5G7k/snN9gPqquIhZsHgIIHVDlRgYTYGxrwu6w482iIhAq8n5R6+pcBgpGgxFFBz7rZA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+<title>OpenLayers example</title>
+<style type="text/css">
+	#sidebar {
+			
+			
+			-webkit-transition: margin 0.3s ease;
+			-moz-transition: margin 0.3s ease;
+			-o-transition: margin 0.3s ease;
+			transition: margin 0.3s ease;
+		}
+
+		.flex-grow-1{
+			flex-grow: 1;
+		}
+		.toggle-sidebar{
+			position: absolute;
+			z-index: 10;
+			left: -46px;
+			top: 130px;
+			transform: rotate(-90deg);
+			border-radius: 0;
+			box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+		}
+		.mapContainer{
+			position: absolute;
+			left: 0;
+			top: 54px;
+			bottom: 0;
+			right: 0;
+		}
+		#sidebar{
+			position: relative;
+			padding: 20px;
+    		min-width: 250px;
+		}
+		#content{
+			position: relative;
+		}
+</style>
+
+<div class="d-flex mapContainer" id="row-main">
+	<div class="" id="sidebar">
+		<h2>Layers</h2>
+
+		<div id="allinputs">
+
+		</div>
+	</div>
+	<div class="flex-grow-1" id="content">
+		<button type="button" class="btn btn-default toggle-sidebar">Toggle sidebar</button>
+
+		<div id="map" class="map"></div>
+
+
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".toggle-sidebar").click(function () {
+			$('#sidebar').toggle()
+			$('#content').toggleClass("show-sidebar")
+			map.renderSync() 
+			map.updateSize()
+				map.updateSize()
+				return false;
+			});
+		});
+	</script>
+
+
+{% endblock content %}
+
+
+{% block write %} 
+{{request.user}}
+{% endblock %}
+
+
+{% block title %} 
+sf
+{% endblock %}
+
+
