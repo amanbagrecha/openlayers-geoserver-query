@@ -5,7 +5,7 @@
 Run the application at 
 
 ```
-http://52.90.64.40:8000/
+http://3.81.189.35:8000/
 ```
 
 The application requires login credentials to be able to load and query layer served via geoserver.

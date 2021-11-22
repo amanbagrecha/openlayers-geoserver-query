@@ -1,4 +1,4 @@
-var geoserver_ip = 'http://52.90.64.40'
+var geoserver_ip = 'http://3.81.189.35'
 var geoserver_port = '8080'
 
 
